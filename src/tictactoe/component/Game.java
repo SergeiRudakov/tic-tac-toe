@@ -1,4 +1,6 @@
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameTable;
 
 import java.util.Random;
 
