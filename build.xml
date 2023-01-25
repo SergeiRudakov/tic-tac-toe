@@ -1,0 +1,23 @@
+<project name="tic-tac-toe project" basedir="." default="build">
+    <target name="clean">
+        <delete dir="out"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="out/classes"/>
+        <javac srcdir="src" destdir="out/classes"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="out/tic-tac-toe.jar" basedir="out/classes">
+            <manifest>
+                <attribute name="Main-Class" value="tictactoe.Launcher"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build" depends="jar">
+        <delete dir="out/classes"/>
+    </target>
+
+</project>
