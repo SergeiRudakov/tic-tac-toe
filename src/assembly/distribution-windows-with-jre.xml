@@ -25,7 +25,7 @@ http://maven.apache.org/ASSEMBLY/2.1.1 ">
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
-            <directory>.tmp/jre19-windows</directory>
+            <directory>.tmp/jre-windows</directory>
             <outputDirectory>jre</outputDirectory>
         </fileSet>
     </fileSets>

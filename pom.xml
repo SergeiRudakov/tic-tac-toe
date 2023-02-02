@@ -128,13 +128,6 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>${maven-assembly-plugin.version}</version>
-                <configuration>
-                    <descriptors>
-                        <descriptor>src/assembly/distribution-windows.xml</descriptor>
-                        <descriptor>src/assembly/distribution-unix.xml</descriptor>
-                        <descriptor>src/assembly/distribution-windows-with-jre.xml</descriptor>
-                    </descriptors>
-                </configuration>
                 <executions>
                     <execution>
                         <id>make-assembly</id> <!-- this is used for inheritance merges -->
@@ -147,4 +140,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>without-jre</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/distribution-windows.xml</descriptor>
+                                <descriptor>src/assembly/distribution-unix.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>with-jre</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/distribution-windows-with-jre.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
