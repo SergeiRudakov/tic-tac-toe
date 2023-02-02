@@ -2,10 +2,9 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 https://maven.apache.org/xsd/assembly-2.1.1.xsd
 http://maven.apache.org/ASSEMBLY/2.1.1 ">
-
-    <id>windows</id>
+    <id>Unix</id>
     <formats>
-        <format>zip</format>
+        <format>tar.gz</format>
     </formats>
     <fileSets>
         <fileSet>
@@ -19,9 +18,10 @@ http://maven.apache.org/ASSEMBLY/2.1.1 ">
             <directory>${project.basedir}/src/main/scripts</directory>
             <outputDirectory/>
             <includes>
-                <include>*.cmd</include>
+                <include>*.sh</include>
             </includes>
-            <lineEnding>windows</lineEnding>
+            <lineEnding>unix</lineEnding>
+            <fileMode>755</fileMode>
         </fileSet>
     </fileSets>
 </assembly>

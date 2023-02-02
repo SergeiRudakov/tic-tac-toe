@@ -72,7 +72,6 @@
     </properties>
 
     <build>
-
         <pluginManagement>
             <plugins>
                 <!-- clean lifecycle -->
@@ -132,6 +131,7 @@
                 <configuration>
                     <descriptors>
                         <descriptor>src/assembly/distribution-windows.xml</descriptor>
+                        <descriptor>src/assembly/distribution-unix.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
