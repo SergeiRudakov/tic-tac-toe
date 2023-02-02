@@ -22,6 +22,7 @@ http://maven.apache.org/ASSEMBLY/2.1.1 ">
                 <include>*.cmd</include>
             </includes>
             <lineEnding>windows</lineEnding>
+            <filtered>true</filtered>
         </fileSet>
     </fileSets>
 </assembly>
