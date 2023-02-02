@@ -2,7 +2,7 @@ package tictactoe;
 
 import tictactoe.component.*;
 import tictactoe.keypad.DesktopNumericKeypadCellNumberConverter;
-import tictactoe.keypad.TerminalNumericKeypadCellNumberConverter;
+//import tictactoe.keypad.TerminalNumericKeypadCellNumberConverter;
 
 public class Launcher {
     public static void main(final String[] args) {
