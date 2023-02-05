@@ -6,14 +6,14 @@ import tictactoe.model.Player;
 import java.util.Random;
 
 public class Game {
-    private final DataPrinter dataPrinter;
+    private final DataPrinterImpl dataPrinter;
     private final Player player1;
     private final Player player2;
     private final WinnerVerifier winnerVerifier;
     private final CellVerifier cellVerifier;
     private final boolean canSecondPlayerMakeFirstMove;
 
-    public Game(final DataPrinter dataPrinter, final Player player1, final Player player2, final WinnerVerifier winnerVerifier, final CellVerifier cellVerifier, final boolean canSecondPlayerMakeFirstMove) {
+    public Game(final DataPrinterImpl dataPrinter, final Player player1, final Player player2, final WinnerVerifier winnerVerifier, final CellVerifier cellVerifier, final boolean canSecondPlayerMakeFirstMove) {
         this.dataPrinter = dataPrinter;
         this.player1 = player1;
         this.player2 = player2;

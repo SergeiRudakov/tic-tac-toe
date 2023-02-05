@@ -5,9 +5,6 @@ import tictactoe.model.Player;
 import tictactoe.model.PlayerType;
 import tictactoe.model.Sign;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GameFactory {
     private final PlayerType player1Type;
     private final PlayerType player2Type;
@@ -22,7 +19,7 @@ public class GameFactory {
     public Game create() {
         final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
         return new Game(
-                new DataPrinter(cellNumberConverter),
+                new DataPrinterImpl(cellNumberConverter),
                 new Player(Sign.X, player1Type, cellNumberConverter),
                 new Player(Sign.O, player2Type, cellNumberConverter),
                 new WinnerVerifier(),
