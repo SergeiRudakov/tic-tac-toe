@@ -1,5 +1,8 @@
 package tictactoe.component;
 
+import tictactoe.DataPrinter;
+import tictactoe.component.console.ConsoleDataPrinter;
+import tictactoe.component.console.ConsoleUserInputReader;
 import tictactoe.keypad.DesktopNumericKeypadCellNumberConverter;
 import tictactoe.model.Player;
 import tictactoe.model.PlayerType;
@@ -18,10 +21,12 @@ public class GameFactory {
 
     public Game create() {
         final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
+        DataPrinter dataPrinter = new ConsoleDataPrinter(cellNumberConverter);
+        UserInputReader userInputReader = new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
         return new Game(
-                new DataPrinterImpl(cellNumberConverter),
-                new Player(Sign.X, player1Type, cellNumberConverter),
-                new Player(Sign.O, player2Type, cellNumberConverter),
+                dataPrinter,
+                new Player(Sign.X, player1Type, userInputReader, dataPrinter),
+                new Player(Sign.O, player2Type, userInputReader, dataPrinter),
                 new WinnerVerifier(),
                 new CellVerifier(),
                 player1Type != player2Type);

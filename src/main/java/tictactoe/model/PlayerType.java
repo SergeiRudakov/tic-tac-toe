@@ -1,17 +1,15 @@
 package tictactoe.model;
 
-import tictactoe.component.CellNumberConverter;
-import tictactoe.component.ComputerMove;
-import tictactoe.component.Move;
-import tictactoe.component.UserMove;
+import tictactoe.DataPrinter;
+import tictactoe.component.*;
 
 public enum PlayerType {
     USER,
     COMPUTER;
 
-    public Move getMove(CellNumberConverter cellNumberConverter) {
+    public Move getMove(UserInputReader userInputReader, DataPrinter dataPrinter) {
         if (this == USER) {
-            return new UserMove(cellNumberConverter);
+            return new UserMove(userInputReader, dataPrinter);
         } else if (this == COMPUTER) {
             return new ComputerMove();
         }

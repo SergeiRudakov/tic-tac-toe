@@ -21,7 +21,7 @@ public class CommandLineArgumentParser {
                 PlayerType foundPlayerType = PlayerType.valueOf(argUpperCase);
                 playerTypes.add(foundPlayerType);
             } catch (Exception e) {
-                System.out.println("Unsupported command line argument: '"+arg+"'");
+                System.err.println("Unsupported command line argument: '"+arg+"'");
             }
             if (playerTypes.size() == 2) {
                 break;
