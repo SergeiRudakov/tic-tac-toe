@@ -27,28 +27,30 @@ public class Game {
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
         }
+        final Move[] moves = {userMove, computerMove};
         while (true) {
-            userMove.make(gameTable);
-            dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isUserWin(gameTable)) {
-                System.out.println("YOU WIN");
-                break;
-            }
-            if (cellVerifier.allCellsFilled(gameTable)) {
-                System.out.println("Sorry, DRAW!");
-                break;
-            }
-            computerMove.make(gameTable);
-            dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isComputerWin(gameTable)) {
-                System.out.println("COMPUTER WIN");
-                break;
-            }
-            if (cellVerifier.allCellsFilled(gameTable)) {
-                System.out.println("Sorry, DRAW!");
-                break;
+            for (final Move move : moves) {
+                move.make(gameTable);
+                dataPrinter.printGameTable(gameTable);
+                if (move instanceof UserMove && winnerVerifier.isUserWin(gameTable)) {
+                    System.out.println("YOU WIN");
+                    printGameOver();
+                    return;
+                } else if (move instanceof ComputerMove && winnerVerifier.isComputerWin(gameTable)) {
+                    System.out.println("COMPUTER WIN");
+                    printGameOver();
+                    return;
+                }
+                if (cellVerifier.allCellsFilled(gameTable)) {
+                    System.out.println("Sorry, DRAW!");
+                    printGameOver();
+                    return;
+                }
             }
         }
+    }
+
+    private static void printGameOver() {
         System.out.println("GAME OVER");
     }
 }
