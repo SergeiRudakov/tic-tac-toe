@@ -1,6 +1,8 @@
 package tictactoe.component;
 
 import tictactoe.model.GameTable;
+import tictactoe.model.Player;
+import tictactoe.model.Sign;
 
 import java.util.Random;
 
@@ -22,22 +24,23 @@ public class Game {
     public void play() {
         System.out.println("Use the following mapping table to specify a cell using numbers from 1 to 9:");
         dataPrinter.printMappingTable();
+
+        final Player user = new Player(Sign.X, userMove);
+        final Player computer = new Player(Sign.O, computerMove);
+        final Player[] players = {user, computer};
+
         final GameTable gameTable = new GameTable();
         if (new Random().nextBoolean()) {
-            computerMove.make(gameTable);
+            computer.makeMove(gameTable);
             dataPrinter.printGameTable(gameTable);
         }
-        final Move[] moves = {userMove, computerMove};
+
         while (true) {
-            for (final Move move : moves) {
-                move.make(gameTable);
+            for (final Player player : players) {
+                player.makeMove(gameTable);
                 dataPrinter.printGameTable(gameTable);
-                if (move instanceof UserMove && winnerVerifier.isUserWin(gameTable)) {
-                    System.out.println("YOU WIN");
-                    printGameOver();
-                    return;
-                } else if (move instanceof ComputerMove && winnerVerifier.isComputerWin(gameTable)) {
-                    System.out.println("COMPUTER WIN");
+                if (winnerVerifier.isWinner(gameTable, player)) {
+                    System.out.println(player +" WIN");
                     printGameOver();
                     return;
                 }

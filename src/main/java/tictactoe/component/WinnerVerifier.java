@@ -2,23 +2,16 @@ package tictactoe.component;
 
 import tictactoe.model.Cell;
 import tictactoe.model.GameTable;
+import tictactoe.model.Player;
 import tictactoe.model.Sign;
 
 public class WinnerVerifier {
 
-    public boolean isUserWin(final GameTable gameTable) {
-        return isWinner(gameTable, Sign.X);
-    }
-
-    public boolean isComputerWin(final GameTable gameTable) {
-        return isWinner(gameTable, Sign.O);
-    }
-
-    private boolean isWinner(final GameTable gameTable, final Sign sign) {
-        return isWinnerByRows(gameTable, sign)
-                || isWinnerByCols(gameTable, sign)
-                || isWinnerByMainDiagonal(gameTable, sign)
-                || isWinnerBySecondaryDiagonal(gameTable, sign);
+    public boolean isWinner(final GameTable gameTable, final Player player) {
+        return isWinnerByRows(gameTable, player.getSign())
+                || isWinnerByCols(gameTable, player.getSign())
+                || isWinnerByMainDiagonal(gameTable, player.getSign())
+                || isWinnerBySecondaryDiagonal(gameTable, player.getSign());
     }
 
     private boolean isWinnerByRows(final GameTable gameTable, final Sign sign) {
