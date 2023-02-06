@@ -1,6 +1,6 @@
 package tictactoe.component;
 
-import tictactoe.model.GameTable;
+import tictactoe.model.game.GameTable;
 
 public interface DataPrinter {
 

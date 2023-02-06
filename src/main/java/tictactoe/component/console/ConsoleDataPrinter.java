@@ -1,9 +1,8 @@
 package tictactoe.component.console;
 
 import tictactoe.component.DataPrinter;
-import tictactoe.component.CellNumberConverter;
-import tictactoe.model.Cell;
-import tictactoe.model.GameTable;
+import tictactoe.model.game.Cell;
+import tictactoe.model.game.GameTable;
 
 public class ConsoleDataPrinter implements DataPrinter {
     private final CellNumberConverter cellNumberConverter;

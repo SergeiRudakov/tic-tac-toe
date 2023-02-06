@@ -1,8 +1,9 @@
-package tictactoe.model;
+package tictactoe.model.game;
 
 import tictactoe.component.DataPrinter;
 import tictactoe.component.Move;
 import tictactoe.component.UserInputReader;
+import tictactoe.model.config.PlayerType;
 
 public final class Player {
     private final Sign sign;

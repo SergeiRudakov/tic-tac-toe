@@ -1,4 +1,4 @@
-package tictactoe.model;
+package tictactoe.model.config;
 
 import tictactoe.component.DataPrinter;
 import tictactoe.component.*;

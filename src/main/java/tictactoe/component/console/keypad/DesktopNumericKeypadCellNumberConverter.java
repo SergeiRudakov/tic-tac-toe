@@ -1,7 +1,7 @@
-package tictactoe.keypad;
+package tictactoe.component.console.keypad;
 
-import tictactoe.component.CellNumberConverter;
-import tictactoe.model.Cell;
+import tictactoe.component.console.CellNumberConverter;
+import tictactoe.model.game.Cell;
 
 public class DesktopNumericKeypadCellNumberConverter implements CellNumberConverter {
 

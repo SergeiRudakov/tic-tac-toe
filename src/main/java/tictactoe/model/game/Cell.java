@@ -1,4 +1,4 @@
-package tictactoe.model;
+package tictactoe.model.game;
 
 public class Cell {
     private final int row;

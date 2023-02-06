@@ -1,7 +1,7 @@
 package tictactoe.component;
 
-import tictactoe.model.GameTable;
-import tictactoe.model.Player;
+import tictactoe.model.game.GameTable;
+import tictactoe.model.game.Player;
 
 import java.util.Random;
 

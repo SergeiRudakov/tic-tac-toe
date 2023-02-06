@@ -3,8 +3,8 @@ package tictactoe.component.swing;
 import tictactoe.component.DataPrinter;
 import tictactoe.component.GameOverHandler;
 import tictactoe.component.UserInputReader;
-import tictactoe.model.Cell;
-import tictactoe.model.GameTable;
+import tictactoe.model.game.Cell;
+import tictactoe.model.game.GameTable;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,7 +1,7 @@
-package tictactoe.component;
+package tictactoe.component.config;
 
-import tictactoe.model.PlayerType;
-import tictactoe.model.UserInterface;
+import tictactoe.model.config.PlayerType;
+import tictactoe.model.config.UserInterface;
 
 import java.util.ArrayList;
 import java.util.List;

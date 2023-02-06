@@ -1,14 +1,17 @@
-package tictactoe.component;
+package tictactoe;
 
+import tictactoe.component.*;
+import tictactoe.component.console.CellNumberConverter;
 import tictactoe.component.console.ConsoleDataPrinter;
 import tictactoe.component.console.ConsoleGameOverHandler;
 import tictactoe.component.console.ConsoleUserInputReader;
 import tictactoe.component.swing.GameWindow;
-import tictactoe.keypad.DesktopNumericKeypadCellNumberConverter;
-import tictactoe.model.Player;
-import tictactoe.model.PlayerType;
-import tictactoe.model.Sign;
-import tictactoe.model.UserInterface;
+import tictactoe.component.console.keypad.DesktopNumericKeypadCellNumberConverter;
+import tictactoe.component.config.CommandLineArgumentParser;
+import tictactoe.model.game.Player;
+import tictactoe.model.config.PlayerType;
+import tictactoe.model.game.Sign;
+import tictactoe.model.config.UserInterface;
 
 public class GameFactory {
     private final PlayerType player1Type;

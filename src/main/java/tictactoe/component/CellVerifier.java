@@ -1,7 +1,7 @@
 package tictactoe.component;
 
-import tictactoe.model.Cell;
-import tictactoe.model.GameTable;
+import tictactoe.model.game.Cell;
+import tictactoe.model.game.GameTable;
 
 public class CellVerifier {
     public boolean allCellsFilled(final GameTable gameTable) {
