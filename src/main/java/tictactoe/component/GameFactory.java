@@ -8,27 +8,34 @@ import tictactoe.keypad.DesktopNumericKeypadCellNumberConverter;
 import tictactoe.model.Player;
 import tictactoe.model.PlayerType;
 import tictactoe.model.Sign;
+import tictactoe.model.UserInterface;
 
 public class GameFactory {
     private final PlayerType player1Type;
     private final PlayerType player2Type;
+    private final UserInterface userInterface;
 
     public GameFactory(final String[] args) {
         CommandLineArgumentParser commandLineArgumentParser = new CommandLineArgumentParser(args);
-        CommandLineArgumentParser.PlayerTypes playerTypes = commandLineArgumentParser.parse();
-        player1Type = playerTypes.getPlayer1Type();
-        player2Type = playerTypes.getPlayer2Type();
+        CommandLineArgumentParser.GameParameters gameParameters = commandLineArgumentParser.parse();
+        player1Type = gameParameters.getPlayer1Type();
+        player2Type = gameParameters.getPlayer2Type();
+        userInterface = gameParameters.getUserInterface();
     }
 
     public Game create() {
-        final GameWindow gameWindow = new GameWindow();
+        final DataPrinter dataPrinter;
+        final UserInputReader userInputReader;
 
-        //final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
-
-        DataPrinter dataPrinter = gameWindow;
-        UserInputReader userInputReader = gameWindow;
-        //DataPrinter dataPrinter = new ConsoleDataPrinter(cellNumberConverter);
-        //UserInputReader userInputReader = new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
+        if (userInterface == UserInterface.GUI) {
+            final GameWindow gameWindow = new GameWindow();
+            dataPrinter = gameWindow;
+            userInputReader = gameWindow;
+        } else {
+            final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
+            dataPrinter = new ConsoleDataPrinter(cellNumberConverter);
+            userInputReader = new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
+        }
 
         return new Game(
                 dataPrinter,
