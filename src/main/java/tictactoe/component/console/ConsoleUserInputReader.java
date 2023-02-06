@@ -1,6 +1,6 @@
 package tictactoe.component.console;
 
-import tictactoe.DataPrinter;
+import tictactoe.component.DataPrinter;
 import tictactoe.component.CellNumberConverter;
 import tictactoe.component.UserInputReader;
 import tictactoe.model.Cell;

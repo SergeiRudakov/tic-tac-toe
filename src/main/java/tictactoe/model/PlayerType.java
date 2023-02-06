@@ -1,6 +1,6 @@
 package tictactoe.model;
 
-import tictactoe.DataPrinter;
+import tictactoe.component.DataPrinter;
 import tictactoe.component.*;
 
 public enum PlayerType {

@@ -1,6 +1,5 @@
 package tictactoe.component;
 
-import tictactoe.DataPrinter;
 import tictactoe.model.Cell;
 import tictactoe.model.GameTable;
 import tictactoe.model.Sign;
